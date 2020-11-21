@@ -1,1 +1,78 @@
-
+{
+  "name": "ScoopML php ",
+  "apiVersion": "2012-10-14",
+  "baseUrl": "https://www.scoopml.app",
+  "description": "ScoopML API for text analysis",
+  "operations": {
+    "CreateFoo": {
+      "httpMethod": "POST",
+      "uri": "/",
+      "summary": "Creates ScoopML",
+      "responseModel": "FooResponse",
+      "parameters": {
+        "name": {
+          "payload": "text",
+          "required": true
+        },
+        "description": {
+          "location": "json",
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "models": {
+    "BaseResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "string",
+          "required": true
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "The error code."
+              },
+              "message": {
+                "type": "string",
+                "description": "The detailed message from the server."
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": {
+        "location": "json"
+      }
+    },
+    "FooResponse": {
+      "type": "object",
+      "extends": "BaseResponse",
+      "properties": {
+        "Foo": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "name": {
+              "type": "string",
+              "required": true
+            },
+            "description": {
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
