@@ -20,7 +20,7 @@ class ScoopMLRestClient extends GuzzleClient {
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json',
             ],
-            'auth' =>  [$config['api_user']],
+            'payload' =>  [$config['text to classify']],
         ]);
 
         return new static($client, $service_description, NULL, NULL, NULL, $config);
