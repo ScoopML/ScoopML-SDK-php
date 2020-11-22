@@ -1,7 +1,7 @@
 # ScoopML-SDK-php
 A SDK for integration of ScoopML into apps built using php
 
-Copy your unique url from ScoopML text analyzer
+Copy your unique url from ScoopML text analyzer dashboard to use it here
 
 
 # Usage
